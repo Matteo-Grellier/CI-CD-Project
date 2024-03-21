@@ -21,10 +21,10 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: user-service
           file: ./user-service/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/front-end-react:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/user-service:latest
 
   order-service:
     runs-on: ubuntu-latest
@@ -40,10 +40,10 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: order-service
           file: ./order-service/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/front-end-react:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/order-service:latest
   front-end-react:
     runs-on: ubuntu-latest
     steps:
@@ -58,7 +58,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: front-end-react
           file: ./front-end-react/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/front-end-react:latest
