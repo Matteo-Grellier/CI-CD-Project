@@ -24,7 +24,7 @@ jobs:
           context: user-service
           file: ./user-service/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/user-service:${{ steps.branch-names.outputs.current_branch }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/user-service:${{ github.head_ref || github.ref_name }}
   order-service:
     runs-on: ubuntu-latest
     steps:
@@ -42,7 +42,7 @@ jobs:
           context: order-service
           file: ./order-service/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/order-service:${{ steps.branch-names.outputs.current_branch }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/order-service:${{ github.head_ref || github.ref_name }}
   front-end-react:
     runs-on: ubuntu-latest
     steps:
@@ -60,4 +60,4 @@ jobs:
           context: front-end-react
           file: ./front-end-react/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/front-end-react:${{ steps.branch-names.outputs.current_branch }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/front-end-react:${{ github.head_ref || github.ref_name }}
