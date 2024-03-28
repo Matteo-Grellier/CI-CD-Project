@@ -6,7 +6,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Connect to MongoDB
-client = MongoClient(host='test_mongodb',
+client = MongoClient(host='test-mongodb',
                          port=27017,
                          username='root',
                          password='pass',
