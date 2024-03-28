@@ -63,7 +63,7 @@ const App = () => {
 		<div className="app-container">
 			<header className="App-header">
 				<div className="form-container">
-					<h2>Create Us:</h2>
+					<h2>Create Test:</h2>
 					<input
 						type="text"
 						placeholder="First Name"
@@ -79,7 +79,7 @@ const App = () => {
 						onChange={handleInputChange}
 					/>
 					<button className="fetch-button" onClick={createUser}>
-						Create User
+						Create Test
 					</button>
 				</div>
 

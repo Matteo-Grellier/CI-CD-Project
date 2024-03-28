@@ -19,6 +19,7 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=pass
   front-end-react:
     image: front-end-react
+    build: ./front-end-react
     restart: unless-stopped
     ports:
       - 3000:3000
