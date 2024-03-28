@@ -61,3 +61,10 @@ jobs:
           file: ./front-end-react/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/front-end-react:${{ github.ref_name }}
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+            context: front-end-react
+            file: ./front-end-react/Dockerfile
+            push: true
+            tags: ${{ secrets.DOCKERHUB_USERNAME }}/front-end-react:latest
