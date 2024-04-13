@@ -11,7 +11,7 @@ Il faut aussi lancer argo-cd en suivant ce [tutoriel](https://argo-cd.readthedoc
 ![image](https://github.com/Matteo-Grellier/CI-CD-Project/assets/46086160/0584cc63-a1f6-4606-a646-8f63587e527b)
 
 Les services devraient être lancer. Pour y accéder il faut faire cette série de commandes :
-- Tout d'abord récupérer les pods sur lesquelles ils sont lancés et ensuite faire:
+- `kubectl get pods`
 - `kubectl port-forward <order-service-pod> 3002:3002`
 - `kubectl port-forward <front-end-service> 3000:3000`
 
